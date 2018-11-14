@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/126271/pexels-photo-126271.jpeg?cs=srgb&dl=architecture-building-countryside-126271.jpg&fm=jpg');">
+  <div class="banner-content">
+    <h1>My Parks & Gardens</h1>
+    <p>Learn to code with us in Berlin</p>
+    <a class="btn btn-primary btn-lg">Start now</a>
+  </div>
+</div>
+<div style="height:100px"></div>
+<div class="container">
+  <div class="row">
+    <% @parks.each do |park| %>
+      <div class="col col-xs-12 col-sm-4">
+        <%= link_to park_path(park) do  %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= park.banner_url %>');">
+            <div class="card-category">Popular</div>
+            <div class="card-description">
+              <h2><%= park.name%></h2>
+              <p><%= park.address %></p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<!-- link_to path do-->
+<!-- CLICKABLE -->
+<!-- end -->
+<%= link_to 'New Park', new_park_path %>

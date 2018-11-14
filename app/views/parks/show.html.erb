@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @park.name %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @park.address %>
+</p>
+<p>
+  <strong>Rating:</strong>
+  <%= @park.rating %>
+</p>
+<p>
+  <strong>Banner url:</strong>
+  <%= @park.banner_url %>
+</p>
+<%@park.plants.each do |plant| %>
+  <p><%= plant.name %></p>
+<% end %>
+<%= link_to 'Edit', edit_park_path(@park) %> |
+<%= link_to 'Back', parks_path %> | 
+<%= link_to "Add a Plant" , new_park_plant_path(@park.id) %>

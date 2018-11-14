@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-xs-12 col-sm-8 col-sm-offset-2">
+      <h1>Add A New Plant!</h1>
+      <%= simple_form_for [@park, @plant] do |f| %>
+        <%= f.input :name, hint: "Please put the location here too" %>
+        <%= f.input :species, placeholder: "i.e. Rose" %>
+        <%= f.input :age, collection: (1..10) %>
+        <%= link_to "Back", parks_path, class: "btn btn-warning"  %>
+        <%= f.submit "Add", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- POST /plants -->
+<!-- POST   /parks/1/plants -->
